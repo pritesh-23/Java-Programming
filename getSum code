@@ -1,0 +1,10 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(getSum(new int[]{1, 2, 3, 4, 5 })); 
+    }
+    static public int getSum(int[] A) {
+        int num = A.length;
+        int result = num*(A[0] + A[num - 1]) / 2;
+        return result;
+    }
+}
