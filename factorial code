@@ -1,0 +1,39 @@
+import java.util.Scanner ;
+public class Practical5{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in) ;
+        int number = sc.nextInt() ;
+        if (number % 2 == 0 ){
+            System.out.println("Code is executing using for loop : " + Factorial1(number));
+        }else {
+            System.out.println("Code is executing using while loop : "+Factorial2(number));
+        }
+        System.out.println(Factorial3(5));
+        
+    }
+    static public int Factorial1(int num) {
+        int fact = 1 ;
+        for (int i = 1 ; i<=num ; i++) {
+            fact = fact * i ;
+        }
+        return fact ;
+    }
+
+    static public int Factorial2(int num) {
+        int fact = 1 ;
+        int i = 1 ;
+        while(i<=num) {
+            fact = fact * i ;
+            i++ ;
+        }
+        return fact ;
+    }
+
+    static int Factorial3(int num) {
+        if (num == 1 ) {
+            return 1;
+        }
+        return num * Factorial3(num - 1);
+    }
+    
+}
