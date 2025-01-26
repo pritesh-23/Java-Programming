@@ -1,0 +1,24 @@
+public class Practical6 {
+    public static void main(String[] args) {
+
+      for (int line = 1 ; line <= 3 ; line ++ ){
+          for(int space = 2 ; space >= line ; space--){
+              System.out.print(" ");
+          }
+          for(int plus = 1 ; plus <= line ; plus++){
+              System.out.print("+ ");
+          }
+          System.out.println("");
+        }
+
+      for(int line = 1 ; line <=2 ; line ++) {
+          for (int space = 1 ; space <=line ; space++) {
+              System.out.print(" ");
+          }
+          for (int star = 2 ; star >=line ; star--) {
+              System.out.print("* ");
+          }
+          System.out.println(" ");
+      }
+    }
+}
