@@ -1,0 +1,26 @@
+public class Practical6 {
+    public static void main(String[] args) {
+
+        for (int line = 1; line <= 3; line++) {
+            for (int space = 2; space >= line; space--) {
+                System.out.print(" ");
+            }
+            for (int plus = 1; plus <= 2 * line - 1; plus++) {
+                System.out.print("+");
+            }
+            System.out.println("");
+        }
+        for (int line = 1; line <= 2; line++) {
+            for (int space = 1; space <= line; space++) {
+                System.out.print(" ");
+            }
+            if (line == 1) {
+                System.out.println("+++");
+            } else
+                System.out.println("+");
+        }
+    }
+}
+
+
+
