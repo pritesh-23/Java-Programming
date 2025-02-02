@@ -1,0 +1,84 @@
+public class Name {
+
+    public static void P(int size) {
+        for (int line = 1; line <= size; line++) {
+            if (line == 1 || line == 3)
+                System.out.print("*  *  ");
+            else if(line == 2)
+                System.out.print("*     ");
+            System.out.println("*");
+        }
+    }
+
+    public static void R(int size){
+        for (int line = 1; line <= size; line++) {
+            if (line == 1 || line == 3)
+                System.out.print("*  *  ");
+            else if(line == 2)
+                System.out.print("*     ");
+            else if(line == 4)
+                System.out.print("*  ");
+            else if(line == 5)
+                System.out.print("*    ");
+            System.out.println("*");
+        }
+    }
+
+    public static void I(int size){
+        for (int line = 1; line <= size; line++) {
+            if(line == 1 )
+                System.out.println("*  *  *");
+            System.out.println("   *");
+        }
+        System.out.print("*  *  *");
+    }
+    public static void T(int size){
+        for (int line = 1; line <= size; line++) {
+            if(line == 1 )
+                System.out.println("*  *  *");
+            System.out.println("   *");
+        }
+    }
+    public static void E(int size){
+        for (int line = 1; line <=size; line++) {
+            if(line == 1 || line ==5)
+                System.out.print("*  *  ");
+            else if(line == 3)
+                System.out.print("*  ");
+            System.out.println("*");
+
+        }
+    }
+    public static void S(int size){
+        for (int line = 1; line <=size; line++) {
+            if(line == 1 || line == 3 || line == 5)
+                System.out.print("*  *  *  ");
+            else if(line == 4)
+                System.out.print("         ");
+            System.out.println("*");
+        }
+    }
+    public static void H(int size){
+        for (int line = 1; line <=size; line++) {
+            if(line == 3)
+                System.out.println("* * * * ");
+            System.out.println("*     *");
+        }
+    }
+    public static void main(String[] args) {
+        P(5);
+        System.out.println("");
+        R(5);
+        System.out.println("");
+        I(3);
+        System.out.println("\n");
+        T(4);
+        System.out.println("");
+        E(5);
+        System.out.println("");
+        S(5);
+        System.out.println("");
+        H(4);
+
+    }
+}
