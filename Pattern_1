@@ -1,0 +1,39 @@
+class pattern {
+
+     static void Pattern1(int size){
+        for(int line = 1 ; line <= size ; line ++ ){
+            for(int space=3;space>=line ; space --){
+                System.out.print(" ");
+            }
+            for (int star = 1 ; star <= 2*line - 1; star++ ){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+    static void Pattern2(int size){
+        for(int line = 1 ; line <= size ; line ++){
+            for(int space = 1 ; space <= line ; space ++){
+                System.out.print(" ");
+            }
+            if(line == 1){
+                System.out.print(" ***");
+            }
+            else{
+                System.out.print(" *");
+            }
+            System.out.println("");
+        }
+    }
+    static void Pattern3(){
+         for(int line = 1 ; line <=5 ; line++){
+             System.out.println("   +");
+        }
+    }
+    public static void main(String[] args) {
+         Pattern1(3);
+         Pattern2(2);
+         Pattern3();
+    }
+
+}
