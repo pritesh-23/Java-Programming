@@ -1,0 +1,27 @@
+class Pattern{
+
+    public static void Patttern1(int size){
+        for(int line = 1 ; line <= 3 ; line ++){
+            if(line == 1){
+                System.out.print("      ");
+            }
+            else if(line == 2){
+                System.out.print("   ");
+            }
+            for(int star = 1 ; star <= line ; star++){
+                System.out.print(" * ");
+            }
+            System.out.println("");
+        }
+    }
+    static void Pattern2(){
+        for(int line = 1 ; line <= 1 ; line ++){
+            System.out.print("+ + +  +");
+        }
+    }
+
+    public static void main(String[] args) {
+       Patttern1(3);
+       Pattern2();
+    }
+}
