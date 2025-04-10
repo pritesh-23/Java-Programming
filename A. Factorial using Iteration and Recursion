@@ -1,0 +1,56 @@
+public class PracticalNo8{
+    public static void main(String[] args){
+
+        double startTime1 ;
+        double startTime2 ;
+        double endTime1 ;
+        double endTime2 ;
+        double timeRequired1 = 0 ;
+        double timeRequired2 = 0 ;
+
+        int Fact1 = 1, Fact2 = 1;
+
+        int size = (int) (System.nanoTime()/100%10) + 1;
+        int[] array = new int [size];
+        for(int i = 0; i < size; i++){
+            array[i] = (int) (System.nanoTime()/100%10);
+        }
+
+        for(int iterativeFact = 0; iterativeFact < size; iterativeFact++){
+            startTime1 = System.nanoTime();
+            Fact1 = factorial1(array[iterativeFact]);
+            endTime1 = System.nanoTime();
+            timeRequired1 += endTime1 - startTime1;
+        }
+
+        for(int recurssiveFact = 0; recurssiveFact < size; recurssiveFact++){
+            startTime2 = System.nanoTime();
+            Fact2 = factorial2(array[recurssiveFact]);
+            endTime2 = System.nanoTime();
+            timeRequired2 += endTime2 - startTime2;
+        }
+
+        double averageTime1 = timeRequired1 / size;
+        double averageTime2 = timeRequired2 / size;
+
+        System.out.println("Time required for factorial1 (Iterative) is " + averageTime1 + " nano second");
+        System.out.println("Time required for factorial2 (Recursive) is " + averageTime2 + " nano second");
+    }
+
+    static int factorial1(int num){
+        int fact = 1;
+        for(int number = num ; number > 1;  number --){
+            fact = fact * number;
+        }
+        return fact;
+    }
+
+    static int factorial2(int num){
+        if(num > 1){
+            return num * factorial2(num - 1);
+        }
+        else{
+            return 1;
+        }
+    }
+}
