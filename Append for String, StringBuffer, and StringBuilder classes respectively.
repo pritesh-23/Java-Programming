@@ -1,0 +1,54 @@
+class StringAppendTime{
+    public static void main(String[] args){
+
+        double startTime1 ;
+        double startTime2 ;
+        double startTime3 ;
+        double endTime1 ;
+        double endTime2 ;
+        double endTime3 ;
+        double timeRequired1 = 0 ;
+        double timeRequired2 = 0 ;
+        double timeRequired3 = 0;
+
+        int size = (int) (System.nanoTime()/100%20 + 1);
+        int[] array = new int [size];
+        for(int i = 0; i < size; i++){
+            array[i] = (int) (System.nanoTime()/100%20);
+        }
+
+        String s1 = "";
+        StringBuffer s2 = new StringBuffer();
+        StringBuilder s3 = new StringBuilder();
+
+        for(int StringAppend = 0; StringAppend < size; StringAppend++){
+            startTime1 = System.nanoTime();
+            s1 += array[StringAppend];
+            endTime1 = System.nanoTime();
+            timeRequired1 += endTime1 - startTime1;
+        }
+
+        for(int StringBufferAppend = 0; StringBufferAppend < size; StringBufferAppend++){
+            startTime2 = System.nanoTime();
+            s2.append(array[StringBufferAppend]);
+            endTime2 = System.nanoTime();
+            timeRequired2 += endTime2 - startTime2;
+        }
+
+        for(int StringBuilderAppend = 0; StringBuilderAppend < size; StringBuilderAppend++){
+            startTime3 = System.nanoTime();
+            s3.append(array[StringBuilderAppend]);
+            endTime3 = System.nanoTime();
+            timeRequired3 += endTime3 - startTime3;
+        }
+
+        double averageTime1 = timeRequired1 / size;
+        double averageTime2 = timeRequired2 / size;
+        double averageTime3 = timeRequired3 / size;
+
+        System.out.println("Time to append String is " + averageTime1 + " nano second");
+        System.out.println("Time to append StringBuffer is " + averageTime2 + " nano second");
+        System.out.print("Time to append StringBuilder is " + averageTime3 + " nano second");
+    }
+
+}
