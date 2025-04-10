@@ -1,0 +1,59 @@
+class Game {
+    public static void main(String[] args) {
+        int size = Integer.parseInt(args[0]);
+        playSudoku(size);
+    }
+
+    static String[][] board;
+
+    static void fillBoard(int size) {
+        board = new String[size][size];
+        int shift = (int)((System.nanoTime() / 100) % size);
+
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                int value = ((row + col + shift) % size) + 1;
+                board[row][col] = Integer.toString(value);
+            }
+        }
+    }
+
+    static void hideSomeValues(int size) {
+        int blanks = (size * size) / 3;
+
+        for (int i = 0; i < blanks; i++) {
+            int row = (int)((System.nanoTime() / 100) % size);
+            int col = (int)((System.nanoTime() / 100) % size);
+            board[row][col] = " ";
+        }
+    }
+
+    static void playSudoku(int size) {
+        fillBoard(size);
+        hideSomeValues(size);
+
+        for (int row = 1; row <= size * 2 + 1; row++) {
+            for (int col = 1; col <= size * 2 + 1; col++) {
+
+                if (row % 2 == 1) {
+                    if (col % 2 == 1) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print("__");
+                    }
+                }
+
+                else {
+                    if (col % 2 == 1) {
+                        System.out.print("|");
+                    } else {
+                        String cell = board[(row / 2) - 1][(col / 2) - 1];
+                        if (cell.length() == 1) System.out.print(" ");
+                        System.out.print(cell);
+                    }
+                }
+            }
+           System.out.println();
+        }
+    }
+}
