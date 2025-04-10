@@ -1,0 +1,63 @@
+
+class Hierarchy {
+    public static void main(String[] args) {
+        Display display = new Display("6.5 inch", "AMOLED");
+        Camera camera = new Camera(64, 32);
+
+        Mobile myPhone = new Mobile("Samsung", "Snapdragon 8 Gen 1", "5000mAh", display, camera);
+        myPhone.show();
+    }
+}
+
+
+class Android {
+    protected String brand, battery, processor;
+
+    Android(String brand, String processor, String battery) {
+        this.brand = brand;
+        this.processor = processor;
+        this.battery = battery;
+    }
+}
+
+
+class Display {
+    String size, type;
+
+    Display(String size, String type) {
+        this.size = size;
+        this.type = type;
+    }
+}
+
+
+class Camera {
+    int rearMegapixel, frontMegapixel;
+
+    Camera(int rear, int front) {
+        this.rearMegapixel = rear;
+        this.frontMegapixel = front;
+    }
+}
+
+
+class Mobile extends Android {
+    Display display;
+    Camera camera;
+
+    Mobile(String brand, String processor, String battery, Display display, Camera camera) {
+        super(brand, processor, battery);
+        this.display = display;
+        this.camera = camera;
+    }
+
+    public void show() {
+        System.out.println();
+        System.out.println("---->Mobile Specifications<----\n");
+        System.out.println("Brand: " + brand);
+        System.out.println("Processor: " + processor);
+        System.out.println("Battery: " + battery);
+        System.out.println("Display: " + display.size + " " + display.type);
+        System.out.println("Camera: " + camera.rearMegapixel + "MP Rear / " + camera.frontMegapixel + "MP Front");
+    }
+}
