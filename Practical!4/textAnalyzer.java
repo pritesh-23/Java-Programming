@@ -37,7 +37,7 @@ public class TextAnalyzer {
         distinctChars = uniqueSet.size();
     }
 
-    // Getter methods with different names for uniqueness
+
     public String getUserText() {
         return userInput;
     }
